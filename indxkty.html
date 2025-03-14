@@ -1,0 +1,511 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KenyTech Systems</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+
+    h1, h2, h3 {
+      color: #007BFF;
+    }
+
+    a {
+      text-decoration: none;
+      color: #007BFF;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Header Styles */
+    header {
+      background-color: #007BFF;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .site-title {
+      font-size: 3rem;
+      font-weight: bold;
+      color: white;
+      margin-bottom: 5px;
+    }
+
+    .site-subtitle {
+      font-size: 1.2rem;
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      font-weight: bold;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('https://source.unsplash.com/1600x900/?technology,office') no-repeat center center/cover;
+      color: brown;
+      text-align: center;
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .hero .btn {
+      background-color: white;
+      color: #007BFF;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    /* About Us Section */
+    .about {
+      background-color: white;
+      padding: 50px 0;
+      text-align: center;
+    }
+
+    .about p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    /* Services Section */
+    .services {
+      background-color: #f4f4f4;
+      padding: 50px 0;
+      text-align: center;
+    }
+
+    .service-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .service-item {
+      background-color: white;
+      padding: 20px;
+      margin: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      flex: 1 1 calc(25% - 40px);
+      text-align: center;
+    }
+
+    .service-item i {
+      font-size: 2rem;
+      color: #007BFF;
+      margin-bottom: 10px;
+    }
+
+    .service-item h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    /* Contact Us Section */
+    .contact {
+      background-color: white;
+      padding: 50px 0;
+      text-align: center;
+    }
+
+    .contact-info p {
+      font-size: 1.1rem;
+      margin: 10px 0;
+    }
+
+    .contact-info i {
+      margin-right: 10px;
+      color: #007BFF;
+    }
+
+    .social-media a {
+      margin: 0 10px;
+      color: #007BFF;
+      font-size: 1.5rem;
+    }
+
+    .social-media a:hover {
+      color: #0056b3;
+    }
+
+    /* WhatsApp Button */
+    .whatsapp-button {
+      display: inline-block;
+      background-color: #25D366;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .whatsapp-button i {
+      margin-right: 10px;
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: #007BFF;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    /* New Sections */
+    .advantages, .why-stand-out, .testimonials, .faqs {
+      background-color: white;
+      padding: 50px 0;
+      text-align: center;
+    }
+
+    .advantages h2, .why-stand-out h2, .testimonials h2, .faqs h2 {
+      margin-bottom: 20px;
+    }
+
+    .advantages .advantage-list, .why-stand-out .stand-out-list, .faqs .faq-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .advantage-item, .stand-out-item, .faq-item {
+      background-color: white;
+      padding: 20px;
+      margin: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      flex: 1 1 calc(25% - 40px);
+      text-align: center;
+    }
+
+    .advantage-item i, .stand-out-item i, .faq-item i {
+      font-size: 2rem;
+      color: #007BFF;
+      margin-bottom: 10px;
+    }
+
+    .advantage-item h3, .stand-out-item h3, .faq-item h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .testimonials blockquote {
+      font-style: italic;
+      color: #555;
+      margin: 20px 0;
+      padding: 10px 20px;
+      border-left: 5px solid #007BFF;
+      background-color: #f9f9f9;
+    }
+
+    .testimonials blockquote footer {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #007BFF;
+    }
+
+    .faqs h3 {
+      margin-top: 20px;
+      color: #007BFF;
+    }
+
+    .faqs p {
+      text-align: left;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container">
+      <h1 class="site-title">KenyTech Systems</h1>
+      <p class="site-subtitle">Your Trusted IT Solutions Partner</p>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <h2>Innovative IT Solutions for Your Business Needs</h2>
+      <p>Providing cutting-edge IT services tailored to your needs.</p>
+      <a href="#contact" class="btn">Get Started</a>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>KenyTech Systems is a leading IT service provider specializing in delivering innovative technology solutions. 
+         With a team of experienced professionals, we are committed to helping businesses achieve their goals through reliable and efficient IT services.</p>
+    </div>
+  </section>
+  
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="service-list">
+        <div class="service-item">
+          <i class="fas fa-print"></i>
+          <h3>Printing (Color/B&W)</h3>
+          <p>High-quality color and black & white printing services for all your documents.</p>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-scanner"></i>
+          <h3>Scanning</h3>
+          <p>Professional scanning services for documents, photos, and more.</p>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-palette"></i>
+          <h3>Graphic Design</h3>
+          <p>Creative graphic design services for logos, flyers, banners, and more.</p>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-file-alt"></i>
+          <h3>Document Preparation & Editing</h3>
+          <p>Expert document preparation, formatting, and editing services.</p>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-globe"></i>
+          <h3>Online Government Systems</h3>
+          <p>Assistance with e-Citizen, KRA, and other online government platforms.</p>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-download"></i>
+          <h3>Software Installation</h3>
+          <p>Installation of Windows, Office, and other essential software.</p>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-envelope"></i>
+          <h3>Email Creation/Recovery</h3>
+          <p>Help with creating new email accounts or recovering lost ones.</p>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-laptop"></i>
+          <h3>Computer Training</h3>
+          <p>Beginner to advanced computer training for individuals and businesses.</p>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-laptop"></i>
+          <h3>Social Media Marketing</h3>
+          <p>Boost your brand’s online presence with expert social media strategies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Advantages Section -->
+  <section class="advantages">
+    <div class="container">
+      <h2>Advantages of Choosing Us</h2>
+      <div class="advantage-list">
+        <div class="advantage-item">
+          <i class="fas fa-users"></i>
+          <h3>Professional Expertise</h3>
+          <p>Our team of experienced professionals ensures top-notch services tailored to your needs.</p>
+        </div>
+        <div class="advantage-item">
+          <i class="fas fa-tools"></i>
+          <h3>Cutting-Edge Technology</h3>
+          <p>We use the latest tools and technologies to deliver high-quality results.</p>
+        </div>
+        <div class="advantage-item">
+          <i class="fas fa-heart"></i>
+          <h3>Customer-Centric Approach</h3>
+          <p>Your satisfaction is our priority. We provide personalized solutions.</p>
+        </div>
+        <div class="advantage-item">
+          <i class="fas fa-dollar-sign"></i>
+          <h3>Affordable Pricing</h3>
+          <p>Competitive pricing without compromising on quality.</p>
+        </div>
+        <div class="advantage-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <h3>Convenient Location</h3>
+          <p>Easily accessible cyber cafe with a professional environment.</p>
+        </div>
+        <div class="advantage-item">
+          <i class="fas fa-clock"></i>
+          <h3>Time-Saving Solutions</h3>
+          <p>Efficient services so you can focus on what matters most.</p>
+        </div>
+        <div class="advantage-item">
+          <i class="fas fa-desktop"></i>
+          <h3>State-of-the-Art Equipment</h3>
+          <p>Latest technology and high-quality equipment for exceptional service.</p>
+        </div>
+        <div class="advantage-item">
+          <i class="fas fa-leaf"></i>
+          <h3>Eco-Friendly Practices</h3>
+          <p>We promote sustainability with energy-efficient devices and recycling.</p>
+        </div>
+        <div class="advantage-item">
+          <i class="fas fa-headset"></i>
+          <h3>24/7 Customer Support</h3>
+          <p>Always available to assist with inquiries or technical issues.</p>
+        </div>
+        <div class="advantage-item">
+          <i class="fas fa-wallet"></i>
+          <h3>Flexible Payment Options</h3>
+          <p>Accept mobile money and cash for your convenience.</p>
+        </div>
+        <div class="advantage-item">
+          <i class="fas fa-gift"></i>
+          <h3>Loyalty Programs</h3>
+          <p>Enjoy discounts and rewards as a loyal customer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why We Stand Out Section -->
+  <section class="why-stand-out">
+    <div class="container">
+      <h2>Why We Stand Out</h2>
+      <div class="stand-out-list">
+        <div class="stand-out-item">
+          <i class="fas fa-lightbulb"></i>
+          <h3>Innovative Solutions</h3>
+          <p>We stay ahead by adopting the latest technology trends.</p>
+        </div>
+        <div class="stand-out-item">
+          <i class="fas fa-handshake"></i>
+          <h3>Community Impact</h3>
+          <p>We support local businesses with affordable IT solutions.</p>
+        </div>
+        <div class="stand-out-item">
+          <i class="fas fa-star"></i>
+          <h3>Commitment to Excellence</h3>
+          <p>Dedicated to delivering services that exceed expectations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <div class="container">
+      <h2>Testimonials</h2>
+      <blockquote>
+        "It has been a game-changer for my business. Their graphic design services helped me create a professional brand identity, and their social media marketing strategies have significantly increased my online presence."
+        <footer>- Jane M., Small Business Owner</footer>
+      </blockquote>
+      <blockquote>
+        "I highly recommend KenyTech Systems for their reliable printing and document preparation services. They always deliver on time and with exceptional quality."
+        <footer>- John K., University Student</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- FAQs Section -->
+  <section class="faqs">
+    <div class="container">
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <i class="fas fa-question-circle"></i>
+          <h3>Do you offer bulk printing discounts?</h3>
+          <p>Yes, we provide discounted rates for bulk printing orders. Contact us for more details.</p>
+        </div>
+        <div class="faq-item">
+          <i class="fas fa-envelope-open"></i>
+          <h3>Can you help me recover a lost email account?</h3>
+          <p>Absolutely! Our team specializes in email recovery and will guide you through the process.</p>
+        </div>
+        <div class="faq-item">
+          <i class="fas fa-graduation-cap"></i>
+          <h3>Do you provide training for advanced software like Photoshop or AutoCAD?</h3>
+          <p>Yes, we offer training for a wide range of software, from beginner to advanced levels.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Us Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>Have questions? Get in touch!</p>
+      <div class="contact-info">
+        <p><i class="fas fa-phone"></i> +254 732 450 086</p>
+        <p><i class="fas fa-envelope"></i> keny.codes.expert@gmail.com</p>
+      </div>
+      <a href="https://wa.me/254790601698" class="whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+      </a>
+      <a href="mailto:keny.codes.expert@gmail.com" class="email-button">
+        <i class="fas fa-envelope"></i> Send Email
+      </a>
+      <div class="social-media">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
